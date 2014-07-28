@@ -1,0 +1,26 @@
+<h1>Listing propositions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @propositions.each do |proposition| %>
+      <tr>
+        <td><%= proposition.name %></td>
+        <td><%= link_to 'Show', proposition %></td>
+        <td><%= link_to 'Edit', edit_proposition_path(proposition) %></td>
+        <td><%= link_to 'Destroy', proposition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visits', proposition_visits_path(proposition) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Proposition', new_proposition_path %>

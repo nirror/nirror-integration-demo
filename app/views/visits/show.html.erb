@@ -1,0 +1,20 @@
+<p>
+  <strong>Nirror hash path:</strong>
+  <%= @visit.nirror_hash_path %>
+</p>
+
+<%= link_to 'Edit', edit_proposition_visit_path(@proposition, @visit) %> |
+<%= link_to 'Back', proposition_visits_path %>
+
+<link href="<%= APP_CONFIG['nirror']['static_base_url'] %>/less/player.css" rel="stylesheet" type="text/css">
+
+<%= javascript_include_tag APP_CONFIG['nirror']['static_base_url']+"/player/player.js" %>
+<%= javascript_tag do %>
+    NirrorPlayer.setAccessToken('<%= @token %>');
+    var player = new NirrorPlayer("visit-player");
+    player.loadVisit("<%= @visit.nirror_hash_path %>");
+<% end %>
+
+<div style="margin-left: 100px;margin-top: 50px;">
+    <div id="visit-player" style="width: 900px; height: 600px;"></div>
+</div>

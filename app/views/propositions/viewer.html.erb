@@ -1,0 +1,21 @@
+<%= javascript_tag do %>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @proposition.name %>
+</p>
+
+<p>
+    <strong>Nirror site id:</strong>
+    <%= @proposition.nirror_site_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_proposition_path(@proposition) %> |
+<%= link_to 'Back', propositions_path %>
+
+<br/>
+<br/>
+<br/>
+
