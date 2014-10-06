@@ -2,7 +2,6 @@ defaults: &defaults
   nirror:
     api_base_url: https://api.nirror.com
     static_base_url: https://static.nirror.com
-    id: 5397c0daa353b22aacf8ec03
     name: OrganizationName,
     idp: https://jwt-idp.mydomain.com
     apikey: 

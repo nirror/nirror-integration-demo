@@ -16,7 +16,6 @@ class Proposition < ActiveRecord::Base
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
-      ni_org_id = APP_CONFIG['nirror']['id']
       proposition_id = self.id
       client = {
           :email => self.user.email,
@@ -26,7 +25,7 @@ class Proposition < ActiveRecord::Base
           }
       }
 
-      create_user_url = "#{ni_base_url}/org/#{ni_org_id}/clients"
+      create_user_url = "#{ni_base_url}/org/clients"
       puts create_user_url
       request = Net::HTTP::Post.new(create_user_url)
       request.add_field('Authorization', APP_CONFIG['nirror']['apikey'])
